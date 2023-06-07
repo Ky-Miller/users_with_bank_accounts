@@ -41,7 +41,7 @@ class User:
         self.checking = BankAccount(int_rate=0.01, balance=0)
         return self.checking
 
-    def create_account_checking(self):
+    def create_account_savings(self):
         self.savings = BankAccount(int_rate=0.03, balance=1000)
         return self.savings
 
@@ -80,4 +80,5 @@ user1.deposit_checking(100)
 user1.display_user_balance_checking()
 
 user2 = User(name="user2", email="user2@email.com")
-user1.transfer_funds(200)
+user1.transfer_funds(amount=100, person=user2)
+user1.display_user_balance_checking()
